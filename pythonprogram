@@ -13,3 +13,79 @@ class Dessert(object):
         self.flour = flour
         self.sugar =sugar
         self.apples = sugar
+
+
+#ANJALISSTUFF
+
+class Dessert(object):
+    def __init__(self, apples=1, flour=1, sugar=1):
+        self.apples = apples
+        self.flour = flour
+        self.sugar = sugar
+
+    def displayUserGuess(self):
+        print (self.apples)
+        print (self.flour)
+        print (self.sugar)
+
+        
+   # def getIngredients(self):
+      #self.apples = raw_input(eval("How many apples? "))
+      #  self.eggs = raw_input(eval("How many eggs?"))
+     #   self.flour = raw_input(eval("How much flour?"))
+     #   self.sugar = raw_input(eval("And finally, how much sugar?"))
+
+def displayRecipe():
+    file = open("GrandmasRecipe.txt",'r')
+    file_contents = file.readlines()
+    recipe=[]
+    for file_content in file_contents:
+        recipe.append(file_content.strip("\n"))
+    for x in recipe:
+        print (x)
+    return file_content
+
+def main():
+    
+    correctApples = 10
+    correctSugar = 1
+    correctFlour = 4
+
+    print("Hello! You're hosting a party and want to make grandma's "
+          "special sour apple pie. When you pull out the recipe, "
+          "you realize that some of the ingredients are missing their quantities.")
+    print ("Your party is tonight and you don't have time to make something else. "
+           "Your job is to try to figure out the correct quantities before your guests "
+           "arrive. Don't worry! We'll give you some helpful feedback along the way.")
+    print ("Here's what you have, the first 3 items are missing their quantities")
+    print (displayRecipe())
+
+    turn = 0
+    while turn < 6:
+        try:
+            pie = Dessert(input("How many apples?:"),input("How many cups of flour?"), input("How many cups of sugar?"))
+            print ("Great! Let's try it out. Baking...")
+            if self.apples == correctApples:
+                print "Good guess! You added the right number of apples"
+            
+
+            turn += 1
+        except (NameError):
+            print("Whoops. Please enter a valid number")
+            pie = Dessert(input("How many apples?:"), input("How many cups of flour?"), input("How many cups of sugar?"))
+            turn += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+main()
